@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import Spotify from '../../public/spotify.png';
+import Github from '../../public/github.png';
+import Portfolio from '../../public/portfolio.png';
+---
+
+<div class="bento max-w-160 grid w-full">
+    <a style="grid-area: s1;" href="https://dev.rdaphq.com" aria-label="Go to Rdap's Portfolio">
+        <div class="bento-item">
+            <p>Portfolio</p>
+            <div class="bento-light"></div>
+            <Image src={Portfolio} alt="Portfolio Icon" loading="eager" />
+        </div>
+    </a>
+    <a style="grid-area: s2;" href="https://rdaphq.com/github" aria-label="Go to Rdap's GitHub">
+        <div class="bento-item">
+            <p>GitHub</p>
+            <div class="bento-light"></div>
+            <Image src={Github} alt="GitHub Icon" class="invert" loading="eager" />
+        </div>
+    </a>
+    <a style="grid-area: s3;" href="https://rdaphq.com/spoitfy" aria-label="Go to Rdap's Spotify">
+        <div class="bento-item">
+            <p>Spotify</p>
+            <div class="bento-light"></div>
+            <Image src={Spotify} alt="Spotify Icon" loading="eager" />
+        </div>
+    </a>
+</div>
+
+<style>
+    .bento {
+        gap: .8rem;
+        display: grid;
+        margin-top: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+        "s1 s2"
+        "s3 s3";
+        padding: 1rem;
+    }
+
+    .bento-item {
+        position: relative;
+        overflow: hidden;
+        border: 2px solid #fff;
+        backdrop-filter: blur(2px);
+        transition: all .2s ease-in-out;
+        border-radius: 1rem;
+        height: 140px;
+        cursor: pointer;
+
+        p {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 1rem;
+        }
+
+        img {
+            width: 110px;
+            position: absolute;
+            transform: rotate(-10deg);
+            bottom: -12px;
+            right: -12px;
+        }
+    }
+
+    .bento-light {
+        left: -10px;
+        width: 60px;
+        height: 60px;
+        bottom: -10px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: #0073ee;
+        filter: blur(50px);
+    }
+
+    .bento-item:hover {
+        border-color: #0073ee;
+        box-shadow: 0 0 10px #0073ee;
+        filter: drop-shadow(0 0 6px #0073ee);
+    }
+</style>

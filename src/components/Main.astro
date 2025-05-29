@@ -1,0 +1,42 @@
+---
+import Logo from '../../public/logo.png';
+import Noise from '../components/Noise.astro';
+import Bento from '../components/Bento.astro';
+import Socials from '../components/Socials.astro';
+import { Image } from 'astro:assets';
+---
+
+<Noise />
+<div id="module" class="flex flex-col items-center justify-center max-w-160 z-10 overflow-clip">
+	<div class="text-module flex flex-col gap-2 rdap-font-t">
+		<div class="flex items-center justify-center sm:justify-start text-2xl gap-1.5 sm:text-4xl md:text-5xl">
+			<span id="welcome" class="text-nowrap"></span>
+			<Image class="w-14 sm:w-23" src={Logo} loading="eager" alt="Rdap Logo" />
+			<span id="actions" class="tracking-tight"></span>
+		</div>
+		<div>
+			<p class="main-text text-center rdap-font-n font-light tracking-tight">
+				Born in 2004, grew in Argentina, now living in Colombia. I'm a frontend developer and a music producer.
+			</p>
+		</div>
+	</div>
+	<Socials />
+	<Bento />
+</div>
+
+<script src="../scripts/textModule.js"></script>
+
+<style>
+	#module {
+		z-index: 2;
+	}
+	
+	.text-module {
+		margin-bottom: 1rem;
+	}
+
+	.main-text {
+		font-size: .75rem;
+		color: #ffffff80;
+	}
+</style>

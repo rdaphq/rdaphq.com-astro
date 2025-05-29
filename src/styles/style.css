@@ -1,0 +1,58 @@
+@import url("https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Gothic+Expanded+One&display=swap");
+.debug {
+  border: 1px solid #adff2f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  cursor: crosshair;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1254901961);
+}
+::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+body {
+  padding: 2rem 1rem;
+  background-color: #000;
+  font-family: "DM Sans", sans-serif;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.rdap-color-purple {
+  color: #616;
+}
+.rdap-color-red {
+  color: #f30;
+}
+.rdap-bg-purple {
+  background-color: #616;
+}
+.rdap-bg-red {
+  background-color: #f30;
+}
+.rdap-font-g {
+  font-family: "Inter", sans-serif;
+}
+.rdap-font-m {
+  font-family: "DM Sans", sans-serif;
+}
+.rdap-font-n {
+  font-family: "Geist", sans-serif;
+}
+.rdap-font-t {
+  font-family: "Special Gothic Expanded One", sans-serif;
+}
+
+/*# sourceMappingURL=style.css.map */

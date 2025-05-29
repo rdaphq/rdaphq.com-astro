@@ -1,0 +1,97 @@
+// ICONS IMPORT (BRANDS)
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css');
+
+// FONTS IMPORT
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Gothic+Expanded+One&display=swap');
+
+// Colors
+$bl: #000;
+$wh: #fff;
+$red: #f30;
+$rdap: #616;
+$dev: #adff2f;
+$dw: #ffffff20;
+
+// Fonts
+$inter: 'Inter', sans-serif;
+$special: 'Special Gothic Expanded One', sans-serif;
+$dmsans: 'DM Sans', sans-serif;
+$geist: 'Geist', sans-serif;
+
+
+@mixin debug {
+    border: 1px solid $dev;
+}
+
+.debug {
+    @include debug;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    cursor: crosshair;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: .5rem;
+
+    &-thumb {
+        background-color: $dw;
+    }
+
+    &-track {
+        background-color: $bl;
+    }
+}
+
+body {
+    padding: 2rem 1rem;
+    background-color: $bl;
+    font-family: $dmsans;
+    min-height: 100vh;
+    color: $wh;
+}
+
+.rdap {
+    &-color {
+        &-purple {
+            color: $rdap;
+        }
+
+        &-red {
+            color: $red;
+        }
+    }
+
+    &-bg {
+        &-purple {
+            background-color: $rdap;
+        }
+
+        &-red {
+            background-color: $red;
+        }
+    }
+
+    &-font {
+        // GLOBAL
+        &-g {
+            font-family: $inter;
+        }
+        // MODERN
+        &-m {
+            font-family: $dmsans;
+        }
+        // NEW
+        &-n {
+            font-family: $geist;
+        }
+        // TITLES
+        &-t {
+            font-family: $special;
+        }
+    }
+}

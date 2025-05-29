@@ -1,0 +1,78 @@
+---
+---
+
+<div class="noise fixed overflow-hidden paused"></div>
+
+<style>
+    .noise {
+		z-index: 1;
+		animation: noise 1s steps(2) infinite;
+		background-image: url('/noise-texture.png');
+		background-size: 240px;
+		opacity: .1;
+
+		width: 500%;
+		height: 1000%;
+	}
+
+    .noise.paused {
+        animation-play-state: paused;
+    }
+
+	@keyframes noise {
+		0% {
+			-webkit-transform: translate(0, 0);
+			transform: translate(0, 0);
+		}
+
+		10% {
+			-webkit-transform: translate(-5%, -5%);
+			transform: translate(-5%, -5%);
+		}
+
+		20% {
+			-webkit-transform: translate(-10%, 5%);
+			transform: translate(-10%, 5%);
+		}
+
+		30% {
+			-webkit-transform: translate(5%, -10%);
+			transform: translate(5%, -10%);
+		}
+
+		40% {
+			-webkit-transform: translate(-5%, 15%);
+			transform: translate(-5%, 15%);
+		}
+
+		50% {
+			-webkit-transform: translate(-10%, 5%);
+			transform: translate(-10%, 5%);
+		}
+
+		60% {
+			-webkit-transform: translate(15%, 0);
+			transform: translate(15%, 0);
+		}
+
+		70% {
+			-webkit-transform: translate(0, 10%);
+			transform: translate(0, 10%);
+		}
+
+		80% {
+			-webkit-transform: translate(-15%, 0);
+			transform: translate(-15%, 0);
+		}
+
+		90% {
+			-webkit-transform: translate(10%, 5%);
+			transform: translate(10%, 5%);
+		}
+
+		100% {
+			-webkit-transform: translate(5%, 0);
+			transform: translate(5%, 0);
+		}
+	}
+</style>
