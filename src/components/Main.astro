@@ -4,21 +4,43 @@ import Noise from '../components/Noise.astro';
 import Bento from '../components/Bento.astro';
 import Socials from '../components/Socials.astro';
 import { Image } from 'astro:assets';
+
+import Kofi from '../../public/kofi.png';
+import Paypal from '../../public/paypal-iso.png';
+
+const links = {
+	ko_fi: {
+		url: 'https://ko-fi.com/rdaphq/tip'
+	},
+	paypal: {
+		url: 'https://paypal.me/rdaphq'
+	}
+}
 ---
 
 <Noise />
 <div id="module" class="flex flex-col items-center justify-center max-w-160 z-10 overflow-clip">
 	<div class="text-module flex flex-col gap-2 rdap-font-t">
-		<div class="flex items-center justify-center sm:justify-start text-2xl gap-1.5 sm:text-4xl md:text-5xl">
+		<div class="text-title flex items-center justify-center sm:justify-start text-2xl gap-1.5 sm:text-4xl md:text-5xl">
 			<span id="welcome" class="text-nowrap"></span>
 			<Image class="w-14 sm:w-23" src={Logo} loading="eager" alt="Rdap Logo" />
 			<span id="actions" class="tracking-tight"></span>
 		</div>
 		<div>
 			<p class="main-text text-center rdap-font-n font-light tracking-tight">
-				Born in 2004, grew in Argentina, now living in Colombia. I'm a frontend developer and a music producer.
+				Also known as 4GOTTENMANE or just Rodri, I'm a <b>senior frontend developer</b> and <b>music producer</b>.
 			</p>
 		</div>
+	</div>
+	<div id="buttonRow" class="flex text-center items-center justify-center gap-6">
+		<a class="bg-blue-700 hover:bg-white hover:text-black font-bold flex items-center gap-2" href={links.paypal.url} target="_blank">
+			<Image class="w-6" src={Paypal} loading="eager" alt="PayPal Iso" />
+			Donate
+		</a>
+		<a class="bg-orange-500 hover:bg-white hover:text-black font-bold flex items-center gap-2" href={links.ko_fi.url} target="_blank">
+			<Image class="w-6" src={Kofi} loading="eager" alt="Kofi Symbol" />
+			Buy me a coffee
+		</a>
 	</div>
 	<Socials />
 	<Bento />
@@ -27,12 +49,29 @@ import { Image } from 'astro:assets';
 <script src="../scripts/textModule.js"></script>
 
 <style>
+	#buttonRow {
+		margin-block: 1.5rem;
+	}
+
+	#buttonRow a {
+		padding: .5rem 1rem;
+		border-radius: 3rem;
+		transition: background-color .2s ease-in-out, color .2s ease-in-out;
+	}
+
 	#module {
 		z-index: 2;
 	}
 	
 	.text-module {
 		margin-bottom: 1rem;
+	}
+
+	.text-title {
+		background: linear-gradient(to bottom, #fff 60%, #888);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
 	}
 
 	.main-text {

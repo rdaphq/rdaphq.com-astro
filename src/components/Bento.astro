@@ -22,7 +22,7 @@ import Portfolio from '../../public/portfolio.png';
     </a>
     <a style="grid-area: s3;" href="https://rdaphq.com/spoitfy" aria-label="Go to Rdap's Spotify">
         <div class="bento-item">
-            <p>Spotify</p>
+            <p>Music</p>
             <div class="bento-light"></div>
             <Image src={Spotify} alt="Spotify Icon" loading="eager" />
         </div>
@@ -36,26 +36,30 @@ import Portfolio from '../../public/portfolio.png';
         margin-top: 2rem;
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas:
-        "s1 s2"
-        "s3 s3";
+        "s1 s1"
+        "s2 s3";
         padding: 1rem;
     }
 
     .bento-item {
-        position: relative;
         overflow: hidden;
-        border: 2px solid #fff;
-        backdrop-filter: blur(2px);
-        transition: all .2s ease-in-out;
+        position: relative;
+        backdrop-filter: blur(1px);
+        background-color: #ffffff05;
+        border: 1px solid #ffffff10;
+        transition: all .15s ease-in-out;
         border-radius: 1rem;
-        height: 140px;
-        cursor: pointer;
+        height: 150px;
 
         p {
             color: #fff;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 700;
             margin: 1rem;
+
+            @media (width < 640px) {
+                font-size: 1.1rem;
+            }
         }
 
         img {
@@ -64,14 +68,18 @@ import Portfolio from '../../public/portfolio.png';
             transform: rotate(-10deg);
             bottom: -12px;
             right: -12px;
+
+            @media (width < 640px) {
+                width: 90px;
+            }
         }
     }
 
     .bento-light {
-        left: -10px;
-        width: 60px;
+        left: -20px;
+        width: 130px;
         height: 60px;
-        bottom: -10px;
+        bottom: -20px;
         border-radius: 50%;
         position: absolute;
         background-color: #0073ee;
@@ -79,8 +87,8 @@ import Portfolio from '../../public/portfolio.png';
     }
 
     .bento-item:hover {
-        border-color: #0073ee;
-        box-shadow: 0 0 10px #0073ee;
-        filter: drop-shadow(0 0 6px #0073ee);
+        box-shadow: 0 0 .8rem #0073ee;
+        backdrop-filter: blur(6px);
+        transform: scale(1.03);
     }
 </style>
