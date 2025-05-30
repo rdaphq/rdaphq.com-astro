@@ -20,7 +20,7 @@ import Portfolio from '../../public/portfolio.png';
             <Image src={Github} alt="GitHub Icon" class="invert" loading="eager" />
         </div>
     </a>
-    <a style="grid-area: s3;" href="https://rdaphq.com/spoitfy" aria-label="Go to Rdap's Spotify">
+    <a style="grid-area: s3;" href="https://rdaphq.com/spotify" aria-label="Go to Rdap's Spotify">
         <div class="bento-item">
             <p>Music</p>
             <div class="bento-light"></div>
@@ -33,21 +33,20 @@ import Portfolio from '../../public/portfolio.png';
     .bento {
         gap: .8rem;
         display: grid;
+        padding: 1rem;
         margin-top: 2rem;
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas:
         "s1 s1"
         "s2 s3";
-        padding: 1rem;
     }
 
     .bento-item {
         overflow: hidden;
         position: relative;
-        backdrop-filter: blur(1px);
         background-color: #ffffff05;
         border: 1px solid #ffffff10;
-        transition: all .15s ease-in-out;
+        transition: all .2s ease-in-out;
         border-radius: 1rem;
         height: 150px;
 
@@ -75,6 +74,33 @@ import Portfolio from '../../public/portfolio.png';
         }
     }
 
+    .bento-item::before {
+        content: "";
+        position: absolute;
+        width: 250px;
+        height: 300%;
+        background: linear-gradient(to right, #ffffff05 40%, #ffffff40);
+        transform: translateX(-120%);
+        rotate: -8deg;
+        z-index: 10;
+        top: -50%;
+        left: 0;
+    }
+
+    .bento-item:hover::before {
+        animation: glassFx 1.2s ease-in-out;
+    }
+
+    @keyframes glassFx {
+        from {
+            transform: translateX(-120%);
+        }
+
+        to {
+            transform: translateX(1000%);
+        }
+    }
+
     .bento-light {
         left: -20px;
         width: 130px;
@@ -83,12 +109,18 @@ import Portfolio from '../../public/portfolio.png';
         border-radius: 50%;
         position: absolute;
         background-color: #0073ee;
-        filter: blur(50px);
+        filter: blur(55px);
+        transition: all .2s ease;
     }
 
     .bento-item:hover {
         box-shadow: 0 0 .8rem #0073ee;
         backdrop-filter: blur(6px);
         transform: scale(1.03);
+    }
+
+    .bento-item:hover .bento-light {
+        width: 160px;
+        filter: blur(40px);
     }
 </style>

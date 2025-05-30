@@ -1,0 +1,24 @@
+---
+import Logo from '../../public/logo.png';
+import Noise from '../components/Noise.astro';
+import { Image } from 'astro:assets';
+
+const links = {
+	ko_fi: {
+		url: 'https://ko-fi.com/rdaphq/tip'
+	},
+	paypal: {
+		url: 'https://paypal.me/rdaphq'
+	}
+}
+---
+
+<Noise />
+<div id="module" class="flex flex-col items-center justify-center max-w-160 z-10 overflow-clip">
+</div>
+
+<style>
+	#module {
+		z-index: 2;
+	}
+</style>

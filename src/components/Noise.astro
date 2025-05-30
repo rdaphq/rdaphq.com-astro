@@ -1,18 +1,17 @@
 ---
 ---
 
-<div class="noise fixed overflow-hidden paused"></div>
+<div class="noise fixed overflow-hidden"></div>
 
 <style>
     .noise {
 		z-index: 1;
+		opacity: .15;
 		animation: noise 1s steps(2) infinite;
 		background-image: url('/noise-texture.png');
-		background-size: 240px;
-		opacity: .1;
-
-		width: 500%;
+		background-size: 370px;
 		height: 1000%;
+		width: 500%;
 	}
 
     .noise.paused {
